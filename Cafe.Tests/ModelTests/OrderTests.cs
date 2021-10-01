@@ -6,8 +6,13 @@ using Cafe.Models;
 namespace Cafe.Test
 {
   [TestClass]
-  public class ItemTests
+  public class ItemTests :IDisposable
   {
+    public void Dispose()
+  {
+    Order.ClearAll();
+  }
+
     //test#1
     [TestMethod]
     public void Order_CreatesInstanceOfOrder_True()
