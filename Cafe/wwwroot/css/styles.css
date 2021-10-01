@@ -1,0 +1,46 @@
+body{
+  background-image: url();
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.container{
+background-color: hsl(15, 92%, 68%);
+text-align: center;
+margin-top:10%;
+width:80vw;
+height:fit-content;
+min-height: 40vh;
+overflow: hidden;
+}
+
+h1{
+  font-family: 'Dancing Script', cursive;
+  font-style:bold;
+}
+
+h2,h3,h4,p{
+  font-family: 'Raleway', sans-serif;
+  text-shadow: black;
+}
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  background-color:hsl(15, 60%, 56%);
+  padding:15px;
+  width:100%;
+}
+ul{
+  list-style-type:none;
+  font-style: bold;
+}
+.card{
+background-color:hsl(6, 93%, 71%);
+width:50%;
+margin:5px;
+padding:5px;
+}
+a{
+  color:black;
+  text-decoration: underline;
+}

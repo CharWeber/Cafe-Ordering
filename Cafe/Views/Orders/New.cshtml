@@ -1,5 +1,6 @@
-@using Cafe.Models;
-
+@{
+  Layout = "_Layout";
+}
 <h1>Add a new @Model.Name Order here, Pierre!</h1>
 <form action="/vendors/@Model.Id/orders" method="post">
   <label for="description">What you need</label>
