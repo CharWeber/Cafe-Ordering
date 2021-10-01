@@ -3,22 +3,22 @@
   Layout = "_Layout";
 }
 
-<h1>@Model["vendor"].Name Orders</h1>
-
-@if (Model["orders"].Count == 0)
-{
-  <p>we haven't done any business with them yet boss</p>
-}
-
-<ul>
-@foreach (Order order in Model["orders"])
-{
-  <li>
-  <div class="card">
-    <p><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></p>
-    <p>order number: @order.Id</p>
-  </div>
-  </li>
-}
-</ul>
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Create Order</p>
+<div class="card mx-auto">
+  <h1>@Model["vendor"].Name Orders</h1>
+  
+  @if (Model["orders"].Count == 0)
+  {
+    <p>we haven't done any business with them yet boss</p>
+  }
+  
+  <ul>
+  @foreach (Order order in Model["orders"])
+  {
+    <li>
+      <p><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></p>
+      <p>order number: @order.Id</p>
+    </li>
+  }
+  </ul>
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Create Order</p>
+</div>

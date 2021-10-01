@@ -3,18 +3,20 @@
   Layout = "_Layout";
 }
 
-<h2>Vendors</h2>
-
-@if (@Model.Count == 0)
-{
-  <p> No Vendors have been added Boss! </p>
-}
-<p>Gotta lotta nice vendors out there Pierre</p>
-@foreach (Vendor vendor in Model)
-{
-  <div class="card mx-auto">
+<div class="card mx-auto">
+  <h2>Vendors</h2>
+  
+  @if (@Model.Count == 0)
+  {
+    <p> No Vendors have been added Boss! </p>
+  }
+  <p>Gotta lotta nice vendors out there Pierre</p>
+  @foreach (Vendor vendor in Model)
+  {
+  
     <h4><a href="/vendors/@vendor.Id">@vendor.Name</a></h4>
-  </div>
-}
-
-<p><a href="/vendors/new">Add a new Vendor</a></p>
+  
+  }
+  
+  <p><a href="/vendors/new">Add a new Vendor</a></p>
+</div>

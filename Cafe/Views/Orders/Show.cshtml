@@ -1,12 +1,12 @@
 @{
   Layout = "_Layout";
 }
-<h1>Order Details:</h1>
-<h4>@Model["order"].Description</h4>
-<ul>
-  <div class="card mx-auto">
-    <li>@Model["order"].Quantity ordered</li>
-    <li>$@Model["order"].Price</li>
-    <li> Delivery: @Model["order"].Date</li>
-  </div>
-</ul>
+<div class="card mx-auto">
+  <h1>Order Details:</h1>
+  <h4>@Model["order"].Description</h4>
+  <ul>
+      <li>@Model["order"].Quantity ordered</li>
+      <li>$@Model["order"].Price</li>
+      <li> Delivery: @Model["order"].Date</li>
+  </ul>
+</div>

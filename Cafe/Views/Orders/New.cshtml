@@ -1,16 +1,28 @@
 @{
   Layout = "_Layout";
 }
-<h1>Add a new @Model.Name Order here, Pierre!</h1>
-<form action="/vendors/@Model.Id/orders" method="post">
-  <label for="description">What you need</label>
-  <input id="description" name="description" type="text">
-  <label for="qty">How much you need</label>
-  <input id="qty" name="qty" type="number">
-  <label for="price">How much is it gonna cost?</label>
-  <input id="price" name="price" type="number">
-  <label for="date">When you need it (MM/DD/YY)</label>
-  <input id="date" name="date" type="text">
-  <button class="btn btn-primary" type="submit">Add Order</button>
-</form>
+<div class="card mx-auto">
+  <h1>Add a new @Model.Name Order here, Pierre!</h1>
+  <form action="/vendors/@Model.Id/orders" method="post">
+  <ul>
+    <li>
+    <label for="description">What you need</label>
+    <input id="description" name="description" type="text">
+    </li>
+    <li>
+      <label for="qty">How much you need</label>
+      <input id="qty" name="qty" type="number">
+    </li>
+    <li>
+      <label for="price">How much is it gonna cost?</label>
+      <input id="price" name="price" type="number">
+    </li>
+    <li>
+      <label for="date">When you need it (MM/DD/YY)</label>
+      <input id="date" name="date" type="text">
+    </li>
+    <li><button class="btn btn-secondary" type="submit">Add Order</button></li>
+  </ul>
+  </form>
+</div>
 <p>We'll get order going right away, Boss</p>
