@@ -99,5 +99,35 @@ namespace Cafe.Test
 
       Assert.AreEqual(result, testOrder2);
     }
+    //test #9
+    [TestMethod]
+    public void Order_GetsPriceAndDateOfOrder_IntString()
+    {
+      int price = 1;
+      string date = "10/1/2021";
+      Order testOrder = new Order(1, "test", price, date);
+      int resultPrice = testOrder.Price;
+      string resultDate = testOrder.Date;
+
+      Assert.AreEqual(resultPrice, price);
+      Assert.AreEqual(resultDate, date);
+    }
+    //test #10
+    [TestMethod]
+    public void Order_SetsPriceAndDateOfOrder_Int()
+    {
+      int price = 1;
+      string date = "10/1/2021";
+      Order testOrder = new Order(1, "test", price, date);
+      string newDate = "10/2/2021";
+      int newPrice = 2;
+      testOrder.Price = newPrice;
+      testOrder.Date = newDate;
+      int resultPrice = testOrder.Price;
+      string resultDate = testOrder.Date;
+
+      Assert.AreEqual(resultPrice, newPrice);
+      Assert.AreEqual(resultDate, newDate);
+    }
   }
 }
