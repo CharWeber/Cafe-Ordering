@@ -56,7 +56,20 @@ namespace Cafe.Test
       Vendor testVendor = new Vendor("testVendor", "testdesciption");
       Vendor testVendor2 = new Vendor("testVendor2", "testdesciption2");
       Vendor result = Vendor.Find(2);
-      Assert.AreEqual(result, testVendor);
+      Assert.AreEqual(result, testVendor2);
+    }
+
+    //test#5
+    [TestMethod]
+    public void AddOrder_AddsOrderToVendorOrderList_OrderList()
+    {
+      Order testOrder = new Order(1,"test", 2, "10/1/2021");
+      List <Order> testList = new List<Order> {};
+      Vendor testVendor = new Vendor("testVendor", "testdesciption");
+      testVendor.AddOrder(testOrder);
+
+      List<Order> result = testVendor.Orders;
+      CollectionAssert.AreEqual(result, testList);
     }
   }
 }
