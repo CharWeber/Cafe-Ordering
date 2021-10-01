@@ -43,10 +43,20 @@ namespace Cafe.Test
     {
       Vendor testVendor = new Vendor("testVendor", "testdesciption");
       Vendor testVendor2 = new Vendor("testVendor2", "testdesciption2");
-      List<Vendor> testList = new List <Vendor> {testVendor};
+      List<Vendor> testList = new List <Vendor> {testVendor, testVendor2};
 
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(result, testList);
+    }
+
+    //test#4
+    [TestMethod]
+    public void Find_FindsSpecificVendor_Vendor()
+    {
+      Vendor testVendor = new Vendor("testVendor", "testdesciption");
+      Vendor testVendor2 = new Vendor("testVendor2", "testdesciption2");
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(result, testVendor);
     }
   }
 }
