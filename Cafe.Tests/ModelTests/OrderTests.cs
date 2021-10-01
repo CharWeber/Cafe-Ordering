@@ -26,5 +26,18 @@ namespace Cafe.Test
 
       Assert.AreEqual("test", result);
     }
+    //test#3
+    [TestMethod]
+    public void Order_SetsDescirptionString_String()
+    {
+      string description = "test";
+      Order testOrder = new Order(description);
+      
+      string updatedDescription = "updated tests";
+      testOrder.Description = updatedDescription;
+      string result = testOrder.Description;
+
+      Assert.AreEqual(description, result);
+    }
   }
 }
