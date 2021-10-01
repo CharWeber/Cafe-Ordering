@@ -75,5 +75,17 @@ namespace Cafe.Test
 
       Assert.AreEqual(result, updatedQty);
     }
+
+    //test #7
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      Order newOrder1 = new Order(1, "test");
+      Order newOrder2 = new Order(2, "test2");
+      List<Order> newList = new List<Order> {newOrder1, newOrder2};
+      List <Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(result, newList)
+    }
   }
 }
