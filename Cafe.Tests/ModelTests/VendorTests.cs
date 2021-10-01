@@ -6,8 +6,12 @@ using Cafe.Models;
 namespace Cafe.Test
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests :IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
     //test #1
     [TestMethod]
     public void Vendor_CreatesInstanceOfVendor_Vendor()
@@ -22,15 +26,27 @@ namespace Cafe.Test
     {
       string testName = "testvendor";
       string testDescription = "testdescription";
-      Vendor testVendor = new Vendor(testname, testDescription);
+      Vendor testVendor = new Vendor(testName, testDescription);
 
       string resultName = testVendor.Name;
       string resultDescription = testVendor.Description;
       int resultID = 1;
 
       Assert.AreEqual(resultName, testName);
-      Assert.AreEqual(resultDescription, testDesciption);
+      Assert.AreEqual(resultDescription, testDescription);
       Assert.AreEqual(resultID, 1);
+    }
+
+    //test#3
+    [TestMethod]
+    public void GetAll_returnsAllVendorObjects_VendorList()
+    {
+      Vendor testVendor = new Vendor("testVendor", "testdesciption");
+      Vendor testVendor2 = new Vendor("testVendor2", "testdesciption2");
+      List<Vendor> testList = new List <Vendor> {testVendor};
+
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(result, testList);
     }
   }
 }
