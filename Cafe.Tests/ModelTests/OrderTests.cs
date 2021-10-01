@@ -37,7 +37,7 @@ namespace Cafe.Test
       testOrder.Description = updatedDescription;
       string result = testOrder.Description;
 
-      Assert.AreEqual(description, result);
+      Assert.AreEqual(updatedDescription, result);
     }
   }
 }
