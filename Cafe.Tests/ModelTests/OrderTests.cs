@@ -17,7 +17,7 @@ namespace Cafe.Test
     [TestMethod]
     public void Order_CreatesInstanceOfOrder_True()
   {
-    Order testOrder = new Order("test");
+    Order testOrder = new Order(1,"test");
     Assert.AreEqual(typeof(Order), testOrder.GetType());
   }
 
@@ -26,7 +26,7 @@ namespace Cafe.Test
     public void Order_ReturnsDescriptionString_String()
     {
       string description = "test";
-      Order testOrder = new Order(description);
+      Order testOrder = new Order(1, description);
       string result = testOrder.Description;
 
       Assert.AreEqual("test", result);
@@ -36,7 +36,7 @@ namespace Cafe.Test
     public void Order_SetsDescirptionString_String()
     {
       string description = "test";
-      Order testOrder = new Order(description);
+      Order testOrder = new Order(1, description);
       
       string updatedDescription = "updated tests";
       testOrder.Description = updatedDescription;
@@ -52,6 +52,17 @@ namespace Cafe.Test
       List<Order> result = Order.GetAll();
 
       CollectionAssert.AreEqual(result, testList);
+    }
+    //test #5
+    [TestMethod]
+    public void Order_GetsQuantityOfOrder_Int()
+    {
+      int qty = 1;
+      Order testOrder = new Order(qty,"test");
+      int result = testOrder.Quantity;
+
+      Assert.AreEqual(result, qty);
+
     }
   }
 }
