@@ -64,7 +64,7 @@ namespace Cafe.Test
     public void AddOrder_AddsOrderToVendorOrderList_OrderList()
     {
       Order testOrder = new Order(1,"test", 2, "10/1/2021");
-      List <Order> testList = new List<Order> {};
+      List <Order> testList = new List<Order> {testOrder};
       Vendor testVendor = new Vendor("testVendor", "testdesciption");
       testVendor.AddOrder(testOrder);
 
