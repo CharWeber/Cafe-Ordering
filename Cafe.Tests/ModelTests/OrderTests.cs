@@ -17,7 +17,7 @@ namespace Cafe.Test
     [TestMethod]
     public void Order_CreatesInstanceOfOrder_True()
   {
-    Order testOrder = new Order(1,"test");
+    Order testOrder = new Order(1,"test", 2, "10/1/2021");
     Assert.AreEqual(typeof(Order), testOrder.GetType());
   }
 
@@ -26,7 +26,7 @@ namespace Cafe.Test
     public void Order_ReturnsDescriptionString_String()
     {
       string description = "test";
-      Order testOrder = new Order(1, description);
+      Order testOrder = new Order(1, description, 2, "10/1/2021");
       string result = testOrder.Description;
 
       Assert.AreEqual("test", result);
@@ -36,7 +36,7 @@ namespace Cafe.Test
     public void Order_SetsDescirptionString_String()
     {
       string description = "test";
-      Order testOrder = new Order(1, description);
+      Order testOrder = new Order(1, description, 2, "10/1/2021");
       
       string updatedDescription = "updated tests";
       testOrder.Description = updatedDescription;
@@ -58,7 +58,7 @@ namespace Cafe.Test
     public void Order_GetsQuantityOfOrder_Int()
     {
       int qty = 1;
-      Order testOrder = new Order(qty,"test");
+      Order testOrder = new Order(qty, "test", 2, "10/1/2021");
       int result = testOrder.Quantity;
 
       Assert.AreEqual(result, qty);
@@ -68,7 +68,7 @@ namespace Cafe.Test
     public void Order_SetsQuantityOfOrder_Int()
     {
       int qty = 1;
-      Order testOrder = new Order(qty,"test");
+      Order testOrder = new Order(qty, "test", 2, "10/1/2021");
       int updatedQty = 3;
       testOrder.Quantity = updatedQty;
       int result = testOrder.Quantity;
@@ -80,9 +80,9 @@ namespace Cafe.Test
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
-      Order newOrder1 = new Order(1, "test");
-      Order newOrder2 = new Order(2, "test2");
-      List<Order> newList = new List<Order> {newOrder1, newOrder2};
+      Order testOrder1 = new Order(1,"test", 2, "10/1/2021");
+      Order testOrder2 = new Order(1,"test2", 2, "10/1/2021");
+      List<Order> newList = new List<Order> {testOrder1, testOrder2};
       List <Order> result = Order.GetAll();
 
       CollectionAssert.AreEqual(result, newList);
@@ -92,12 +92,12 @@ namespace Cafe.Test
     [TestMethod]
     public void Find_FindsAndReturnsOrders_Order()
     {
-      Order newOrder1 = new Order(1, "test");
-      Order newOrder2 = new Order(2, "test2");
+      Order testOrder = new Order(1,"test", 2, "10/1/2021");
+      Order testOrder2 = new Order(1,"test2", 2, "10/1/2021");
 
       Order result = Order.Find(2);
 
-      Assert.AreEqual(result, newOrder2);
+      Assert.AreEqual(result, testOrder2);
     }
   }
 }
