@@ -24,13 +24,13 @@ namespace Cafe.Controllers
 
       return RedirectToAction("Index");
     }
-    [Httpget("/vendors/{Id}")]
+    [HttpGet("/vendors/{Id}")]
     public ActionResult Show(int Id)
     {
       Dictionary<string, object> model = new Dictionary <string, object>();
       Vendor selectedVendor = Vendor.Find(Id);
-      List<Order> vendorOrders = selectedvendor.Orders;
-      model.Add("vendor", slectedVendor);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
     }

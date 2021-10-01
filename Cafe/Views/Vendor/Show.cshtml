@@ -1,0 +1,22 @@
+@using Cafe.Models;
+
+<h1>@Model["vendor"].Name Orders<h1>
+
+@if (Model["orders"].Count == 0)
+{
+  <p>we haven't done any business with them yet boss</p>
+}
+
+<ol>
+@foreach (Order order in Model["orders"])
+{
+  <li>
+  <p><a href='vendors/@Model["vendor"].Id/order/@order.Id'>@order.Description</a></p>
+  <p>order number: @order.Id</p>
+  </li>
+}
+</ol>
+
+<p><a href='vendors/@Model["vendor"].Id/order/new'>Create Order</p>
+<p><a href='/vendors'>See Your Vendors</a></p>
+<p><a href='/'>Pierre's Home Page</a></p>
