@@ -62,7 +62,18 @@ namespace Cafe.Test
       int result = testOrder.Quantity;
 
       Assert.AreEqual(result, qty);
+    }
+    //test #6
+    [TestMethod]
+    public void Order_SetsQuantityOfOrder_Int()
+    {
+      int qty = 1;
+      Order testOrder = new Order(qty,"test");
+      int updatedQty = 3;
+      testOrder.Quantity = updatedQty;
+      int result = testOrder.Quantity;
 
+      Assert.AreEqual(result, updatedQty);
     }
   }
 }
