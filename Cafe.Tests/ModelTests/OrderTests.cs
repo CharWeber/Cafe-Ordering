@@ -85,7 +85,19 @@ namespace Cafe.Test
       List<Order> newList = new List<Order> {newOrder1, newOrder2};
       List <Order> result = Order.GetAll();
 
-      CollectionAssert.AreEqual(result, newList)
+      CollectionAssert.AreEqual(result, newList);
+    }
+
+    //test #8
+    [TestMethod]
+    public void Find_FindsAndReturnsOrders_Order()
+    {
+      Order newOrder1 = new Order(1, "test");
+      Order newOrder2 = new Order(2, "test2");
+
+      Order result = Order.Find(1);
+
+      Assert.AreEqual(result, newOrder2);
     }
   }
 }
