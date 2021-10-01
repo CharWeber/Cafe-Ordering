@@ -15,6 +15,10 @@ namespace Cafe.Models
       Id = _instances.Count;
     }
 
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
 
   }
 }

@@ -39,5 +39,14 @@ namespace Cafe.Test
 
       Assert.AreEqual(updatedDescription, result);
     }
+    //test#4
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> testList = new List<Order>();
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(result, testList);
+    }
   }
 }
