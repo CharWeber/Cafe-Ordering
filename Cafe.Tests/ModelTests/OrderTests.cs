@@ -24,7 +24,7 @@ namespace Cafe.Test
       Order testOrder = new Order(description);
       string result = testOrder.Description;
 
-      Assert.AreEqual("fail", result);
+      Assert.AreEqual("test", result);
     }
   }
 }
