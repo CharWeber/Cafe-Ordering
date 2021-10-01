@@ -49,6 +49,9 @@ background-color: rgba(180, 90, 74, 0);
 width:60%;
 margin:5%;
 padding:5%;
+border-style: dashed;
+border-color:whitesmoke;
+border-radius: 25px;
 }
 a{
   color:whitesmoke;
