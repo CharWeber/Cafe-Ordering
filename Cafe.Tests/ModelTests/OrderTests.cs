@@ -95,7 +95,7 @@ namespace Cafe.Test
       Order newOrder1 = new Order(1, "test");
       Order newOrder2 = new Order(2, "test2");
 
-      Order result = Order.Find(1);
+      Order result = Order.Find(2);
 
       Assert.AreEqual(result, newOrder2);
     }
